@@ -112,7 +112,7 @@ def get_filenames(directory: Path) -> List[Path]:
         for child in directory.iterdir():
             if not child.is_dir():
                 # If it is a file ending in .plot, add it - work around MacOS ._ files
-                if child.suffix == ".plot" and not child.name.startswith("._"):
+                if child.suffix == ".hhdb" and not child.name.startswith("._"):
                     all_files.append(child)
             else:
                 log.debug(f"Not checking subdirectory {child}, subdirectories not added by default")
